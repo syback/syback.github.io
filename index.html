@@ -4,258 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Seung-Yoon Back, Ph.D.</title>
-<meta name="description" content="Seung-Yoon Back — postdoctoral researcher in tropical atmospheric dynamics at the University of Chicago.">
+<meta name="description" content="Seung-Yoon Back &mdash; postdoctoral researcher in tropical atmospheric dynamics at the University of Chicago.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Karla:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#101724;
-  --ink-soft:#1b2536;
-  --paper:#f5f6f8;
-  --paper-2:#ebedf1;
-  --text:#182031;
-  --muted:#5b6779;
-  --line:#d5d9e0;
-  --westerly:#2e6fa7;
-  --easterly:#b03a2e;
-  --maxw:1080px;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--text);
-  font-family:"Karla",system-ui,sans-serif;
-  font-size:17px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* ---------- shared bits ---------- */
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
-.eyebrow{
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--muted);margin:0 0 20px;
-}
-h2{
-  font-family:"Newsreader",Georgia,serif;
-  font-weight:400;font-size:clamp(28px,4vw,40px);
-  letter-spacing:-.01em;margin:0 0 28px;
-}
-a{color:inherit}
-a.link{
-  color:var(--westerly);text-decoration:none;
-  border-bottom:1px solid rgba(46,111,167,.3);
-  transition:border-color .2s;
-}
-a.link:hover{border-bottom-color:var(--westerly)}
-:focus-visible{outline:2px solid var(--westerly);outline-offset:3px;border-radius:2px}
-
-/* ---------- nav ---------- */
-.nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(245,246,248,.82);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s, background .3s;
-}
-.nav.stuck{border-bottom-color:var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
-.brand{
-  font-family:"IBM Plex Mono",monospace;font-size:12px;
-  letter-spacing:.2em;text-transform:uppercase;text-decoration:none;
-}
-.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
-.nav ul a{
-  font-size:14px;text-decoration:none;color:var(--muted);
-  padding-bottom:3px;border-bottom:1px solid transparent;
-  transition:color .2s,border-color .2s;
-}
-.nav ul a:hover{color:var(--text)}
-.nav ul a.active{color:var(--text);border-bottom-color:var(--easterly)}
-@media(max-width:640px){.nav ul{gap:16px}.nav ul a{font-size:13px}}
-
-/* ---------- hero ---------- */
-.hero{
-  position:relative;overflow:hidden;
-  background:var(--ink);color:#eef1f5;
-  min-height:78vh;display:flex;align-items:flex-end;
-  padding:120px 0 56px;
-}
-#qbo{
-  position:absolute;inset:0;width:100%;height:100%;
-  opacity:.9;
-}
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(16,23,36,.55) 0%,rgba(16,23,36,.2) 45%,rgba(16,23,36,.9) 100%);
-}
-.hero .wrap{position:relative;z-index:2;width:100%}
-.hero h1{
-  font-family:"Newsreader",Georgia,serif;
-  font-weight:300;font-size:clamp(44px,8vw,84px);
-  line-height:1.02;letter-spacing:-.02em;margin:0 0 22px;
-}
-.hero h1 .phd{
-  font-family:"IBM Plex Mono",monospace;
-  font-size:clamp(12px,1.5vw,16px);font-weight:400;
-  letter-spacing:.18em;color:#8e9cb0;
-  vertical-align:baseline;margin-left:20px;white-space:nowrap;
-}
-.hero .role{
-  font-size:clamp(16px,2.2vw,19px);color:#b9c4d4;
-  max-width:46ch;margin:0 0 34px;font-weight:300;
-}
-.hero .role em{font-style:normal;color:#eef1f5}
-.meta{
-  display:flex;flex-wrap:wrap;gap:10px 26px;
-  font-family:"IBM Plex Mono",monospace;font-size:12px;
-  letter-spacing:.06em;color:#8e9cb0;
-}
-.meta a{text-decoration:none;border-bottom:1px solid rgba(142,156,176,.35);padding-bottom:2px}
-.meta a:hover{color:#eef1f5;border-bottom-color:#eef1f5}
-
-/* axis ticks over the hero — labels the field as a time-height section */
-.axis{
-  position:absolute;right:22px;top:0;bottom:0;z-index:2;
-  display:flex;flex-direction:column;justify-content:center;gap:52px;
-  font-family:"IBM Plex Mono",monospace;font-size:10px;
-  letter-spacing:.1em;color:rgba(238,241,245,.4);
-  text-align:right;pointer-events:none;
-}
-.axis span{display:block;border-top:1px solid rgba(238,241,245,.14);padding-top:4px;width:66px}
-@media(max-width:760px){.axis{display:none}}
-
-/* ---------- sections ---------- */
-section{padding:104px 0}
-#research{background:var(--paper)}
-#publications{background:var(--paper-2)}
-
-.about{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
-@media(max-width:820px){.about{grid-template-columns:1fr;gap:28px}}
-.about p{margin:0 0 18px;color:#2c3648}
-.about p:last-child{margin-bottom:0}
-.portrait{margin:0 0 24px;max-width:248px}
-.portrait img{
-  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;
-  background:var(--paper-2);
-}
-@media(max-width:820px){.portrait{max-width:190px}}
-.about .side{
-  font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:2;
-  color:var(--muted);border-left:2px solid var(--easterly);padding-left:18px;
-}
-
-.lead{
-  font-family:"Newsreader",Georgia,serif;font-weight:300;
-  font-size:clamp(21px,2.7vw,27px);line-height:1.45;letter-spacing:-.015em;
-  max-width:34ch;margin:72px 0 0;
-}
-.lead + p{max-width:68ch;margin:22px 0 0;color:#2c3648}
-.schematic{margin:56px 0 0}
-.schematic a{display:block;background:#fff;border:1px solid var(--line);padding:20px}
-.schematic img{display:block;width:100%;height:auto}
-.schematic figcaption{
-  font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1.7;
-  letter-spacing:.06em;color:var(--muted);margin-top:12px;max-width:70ch;
-}
-@media(max-width:640px){.schematic a{padding:10px}}
-.themes{margin-top:72px;border-top:1px solid var(--line)}
-.theme{
-  display:grid;grid-template-columns:190px 1fr;gap:34px;
-  padding:40px 0;border-bottom:1px solid var(--line);
-}
-@media(max-width:760px){.theme{grid-template-columns:1fr;gap:12px}}
-.theme-label span{
-  color:var(--easterly);margin-right:7px;font-weight:500;
-}
-.theme-label{
-  font-family:"IBM Plex Mono",monospace;font-size:11px;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-  padding-top:7px;line-height:1.7;
-}
-.theme h3{
-  font-family:"Newsreader",Georgia,serif;font-weight:500;
-  font-size:24px;margin:0 0 16px;letter-spacing:-.01em;
-}
-.theme p{margin:0 0 15px;color:#2c3648;font-size:16px;max-width:68ch}
-.theme p:last-child{margin-bottom:0}
-
-/* ---------- publications ---------- */
-.pubs{list-style:none;margin:0;padding:0}
-.pubs li{
-  display:grid;grid-template-columns:96px 1fr;gap:28px;
-  padding:24px 0;border-bottom:1px solid var(--line);
-}
-.legend{
-  font-family:"IBM Plex Mono",monospace;font-size:12px;
-  color:var(--muted);margin:-12px 0 44px;
-}
-.pubgroup{
-  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:400;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--easterly);
-  margin:56px 0 0;padding-bottom:12px;border-bottom:1px solid var(--line);
-}
-.pubgroup.first{margin-top:0}
-@media(max-width:640px){.pubs li{grid-template-columns:1fr;gap:6px}}
-.pubs .yr{
-  font-family:"IBM Plex Mono",monospace;font-size:13px;
-  color:var(--muted);padding-top:3px;
-}
-.pubs .title{display:block;margin-bottom:5px}
-.pubs .authors{color:var(--muted);font-size:15px}
-.pubs .authors strong{color:var(--text);font-weight:600}
-.pubs .venue{font-style:italic;color:var(--muted);font-size:15px}
-.pubs .tags{margin-top:9px;display:flex;gap:14px}
-.pubs .tags a{
-  font-family:"IBM Plex Mono",monospace;font-size:11px;
-  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
-  color:var(--westerly);border-bottom:1px solid rgba(46,111,167,.3);
-}
-
-/* ---------- footer ---------- */
-footer{background:var(--ink);color:#b9c4d4;padding:72px 0 56px}
-footer .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-@media(max-width:640px){footer .cols{grid-template-columns:1fr;gap:26px}}
-footer h4{
-  font-family:"IBM Plex Mono",monospace;font-size:11px;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:#6f7d92;margin:0 0 14px;font-weight:400;
-}
-footer p{margin:0;font-size:15px;line-height:1.8}
-footer a{color:#eef1f5;text-decoration:none;border-bottom:1px solid rgba(238,241,245,.25)}
-.colophon{
-  margin-top:56px;padding-top:22px;border-top:1px solid rgba(238,241,245,.12);
-  font-family:"IBM Plex Mono",monospace;font-size:11px;color:#6f7d92;
-  letter-spacing:.06em;
-}
-
-/* ---------- scroll reveal ---------- */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .reveal{opacity:1;transform:none;transition:none}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top">S—Y Back</a>
+    <a class="brand" href="index.html">S&mdash;Y Back</a>
     <ul>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
-
 <header class="hero" id="top">
   <canvas id="qbo" aria-hidden="true"></canvas>
   <div class="axis" aria-hidden="true">
@@ -274,12 +40,11 @@ footer a{color:#eef1f5;text-decoration:none;border-bottom:1px solid rgba(238,241
   </div>
 </header>
 
-<section id="research">
+<section class="page" id="about">
   <div class="wrap">
     <div class="about reveal">
       <div>
         <figure class="portrait">
-          <!-- Drop your photo at images/photo.jpg. Portrait crop, ~800x1000 px, under 300 KB. -->
           <img src="images/photo.jpg" alt="Seung-Yoon Back"
                onerror="this.closest('.portrait').style.display='none'">
         </figure>
@@ -287,184 +52,15 @@ footer a{color:#eef1f5;text-decoration:none;border-bottom:1px solid rgba(238,241
         <div class="side">
           Dept. of the Geophysical&nbsp;Sciences<br>
           University of Chicago<br><br>
-          Ph.D. — Seoul National University<br>
+          Ph.D. &mdash; Seoul National University<br>
           Earth &amp; Environmental Sciences
         </div>
       </div>
       <div>
-        <p>I study the dynamics of the tropical atmosphere, from the equatorial stratosphere down to the convecting troposphere. My work centers on the Quasi-Biennial Oscillation and the Madden–Julian Oscillation, and on the coupling that runs between them.</p>
-        <p>I am a postdoc with <a class="link" href="https://geosci.uchicago.edu/~tas1/">Prof. Tiffany A. Shaw</a>. I received my Ph.D. at Seoul National University under <a class="link" href="https://wcd.snu.ac.kr">Prof. Seok-Woo Son</a> and <a class="link" href="https://sites.google.com/snu.ac.kr/tropicalconvectionandwaves">Prof. Daehyun Kim</a>.</p>
+        <p>Hi! I am Seung-Yoon Back, a postdoctoral researcher at the University of Chicago under the supervision of <a class="link" href="https://geosci.uchicago.edu/~tas1/">Prof. Tiffany A. Shaw</a>. I received my Ph.D. in Earth and Environmental Sciences at Seoul National University under the supervision of <a class="link" href="https://wcd.snu.ac.kr">Prof. Seok-Woo Son</a> and <a class="link" href="https://sites.google.com/snu.ac.kr/tropicalconvectionandwaves">Prof. Daehyun Kim</a>.</p>
+        <p>I am interested in tropical atmospheric dynamics, covering phenomena from the equatorial stratosphere to the troposphere. My work explores the dynamics of the Quasi-Biennial Oscillation (QBO) and the Madden&ndash;Julian Oscillation (MJO), and how these systems interact across vertical layers of the atmosphere. I combine theory, observations, and numerical models to investigate the underlying mechanisms of these phenomena. In particular, I use a hierarchy of models ranging from idealized radiative-convective equilibrium simulations to comprehensive climate models, along with reanalysis datasets.</p>
       </div>
     </div>
-
-    <p class="lead reveal">I am a scientist exploring the dynamics of tropical atmospheric phenomena.</p>
-    <p class="reveal">The tropics are the primary energy source for Earth&rsquo;s climate system. This region hosts a wide variety of atmospheric phenomena that influence global weather and climate. Among them, planetary-scale phenomena such as the Quasi-Biennial Oscillation (QBO) and the Madden&ndash;Julian Oscillation (MJO) have far-reaching impacts on global climate. As such, both are considered potential predictability sources on subseasonal-to-seasonal timescales, making their realistic simulation essential. Although the simulation of both phenomena in climate models has improved over the past several decades, significant challenges remain. To address these challenges, I investigate the underlying mechanisms of these phenomena using theory, observations, and a hierarchy of numerical models.</p>
-
-    <figure class="schematic reveal">
-      <a href="images/research-overview.png" title="Open full size">
-        <picture>
-          <source srcset="images/research-overview.webp" type="image/webp">
-          <img src="images/research-overview.png" width="1700" height="957"
-               alt="Schematic of the QBO, the MJO, and their coupling across the tropical stratosphere and troposphere.">
-        </picture>
-      </a>
-      <figcaption>The three threads below, and how they connect.</figcaption>
-    </figure>
-
-    <div class="themes">
-      <div class="theme reveal">
-        <div class="theme-label"><span>1</span> Equatorial<br>stratosphere</div>
-        <div>
-          <h3>Quasi-Biennial Oscillation</h3>
-          <p>The QBO is the dominant mode of variability in the equatorial stratosphere, characterized by alternating easterly and westerly zonal winds with a period of approximately 28 months. In the 2015/16 winter, the QBO experienced an unexpected disruption, and this occurred again in the 2019/20 winter. While several hypotheses have been proposed based on reanalysis data, the disruption mechanism has yet to be understood from a modeling perspective.</p>
-          <p>My research aims to develop a holistic understanding of the physical mechanisms that cause disruption, using a combination of theory and a hierarchy of numerical model simulations. Based on the theory of Plumb (1977), I investigate the QBO in simulations ranging from idealized radiative-convective equilibrium models to comprehensive climate models. By bridging theory, observations, and numerical models across different complexity levels, I aim to develop a scaling theory for the factors controlling future QBO disruptions.</p>
-        </div>
-      </div>
-
-      <div class="theme reveal">
-        <div class="theme-label"><span>2</span> Equatorial<br>troposphere</div>
-        <div>
-          <h3>Madden&ndash;Julian Oscillation</h3>
-          <p>The MJO is the dominant mode of intraseasonal variability in the tropics, characterized by eastward-propagating convective anomalies with a period of 30&ndash;60 days. While the MJO has traditionally been viewed as a single phenomenon, recent studies have classified its propagation into four distinct types: standing, jumping, slow-propagating, and fast-propagating.</p>
-          <p>My research investigates this MJO diversity across multiple scales, from seasonal to long-term timescales. I aim to understand the underlying dynamics of these propagation types through moisture mode theory, which highlights the role of column-integrated moisture in the tropical troposphere. I also evaluate the ability of CMIP6 climate models to simulate MJO diversity, providing insights for improving model performance.</p>
-        </div>
-      </div>
-
-      <div class="theme reveal">
-        <div class="theme-label"><span>3</span> Stratosphere&ndash;<br>troposphere coupling</div>
-        <div>
-          <h3>The QBO&ndash;MJO connection</h3>
-          <p>Recent studies have revealed that the QBO modulates MJO activity, with enhanced MJO amplitude observed during the easterly phase of the QBO. However, the mechanism behind this connection remains poorly understood, and no climate model has successfully reproduced the relationship.</p>
-          <p>My research bridges this gap by reproducing the QBO&ndash;MJO connection in high-resolution simulations with the WRF model. By prescribing different stratospheric background states, I demonstrated that stratospheric conditions can influence MJO amplitude, and identified cloud&ndash;longwave radiation feedback as a key mechanism linking the QBO to MJO variability. This work connects my research on stratospheric and tropospheric dynamics, giving a more complete picture of tropical atmospheric interactions across vertical layers.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="publications">
-  <div class="wrap">
-    <p class="eyebrow reveal">Publications</p>
-    <h2 class="reveal">Papers</h2>
-    <p class="legend reveal">* corresponding author</p>
-
-    <h3 class="pubgroup first reveal">In review &amp; in preparation</h3>
-    <ul class="pubs">
-      <li class="reveal">
-        <div class="yr">in prep</div>
-        <div>
-          <strong class="title">Sensitivity of a QBO-like oscillation to convective self-aggregation in radiative-convective equilibrium</strong>
-          <div class="authors"><strong>Back, S.-Y.*</strong>, T. A. Shaw, and D. Yang</div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">in prep</div>
-        <div>
-          <strong class="title">Mechanism denial study on the QBO&ndash;MJO connection in a regional model</strong>
-          <div class="authors"><strong>Back, S.-Y.</strong>, S.-W. Son*, and J.-H. Kim</div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">submitted</div>
-        <div>
-          <strong class="title">Missing QBO&ndash;MJO connection in the QBOi Phase 2 climate models</strong>
-          <div class="authors">Huang, K.*, C.-H. Park*, <strong>S.-Y. Back</strong>, and coauthors</div>
-        </div>
-      </li>
-    </ul>
-
-    <h3 class="pubgroup reveal">Peer-reviewed</h3>
-    <ul class="pubs">
-      <li class="reveal">
-        <div class="yr">2026</div>
-        <div>
-          <strong class="title">QBOi El Ni&ntilde;o&ndash;Southern Oscillation experiments: assessing relationships between ENSO, MJO, and QBO</strong>
-          <div class="authors">Elsbury, D.*, F. Serva, J. M. Caron, <strong>S.-Y. Back</strong>, C. Orbe, &hellip; S.-W. Son, and coauthors</div>
-          <div class="venue">Weather and Climate Dynamics, 7, 317&ndash;339.</div>
-          <div class="tags"><a href="https://doi.org/10.5194/wcd-7-317-2026">DOI</a></div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">2025</div>
-        <div>
-          <strong class="title">Interseasonal difference in MJO propagation during the extended boreal winter: observations and climate model simulations</strong>
-          <div class="authors"><strong>Back, S.-Y.</strong>, D. Kim*, S.-W. Son*, and D. Kang</div>
-          <div class="venue">Journal of Climate, 38, 6693&ndash;6708.</div>
-          <div class="tags"><a href="https://doi.org/10.1175/JCLI-D-25-0097.1">DOI</a></div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">2024</div>
-        <div>
-          <strong class="title">MJO diversity in CMIP6 models</strong>
-          <div class="authors"><strong>Back, S.-Y.</strong>, D. Kim*, and S.-W. Son*</div>
-          <div class="venue">Journal of Climate, 37, 4835&ndash;4850.</div>
-          <div class="tags"><a href="https://doi.org/10.1175/JCLI-D-23-0656.1">DOI</a></div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">2023</div>
-        <div>
-          <strong class="title">The critical role of the upper-level synoptic disturbance on the China Henan &ldquo;21.7&rdquo; extreme precipitation event</strong>
-          <div class="authors">Zhao, Y., S.-W. Son*, and <strong>S.-Y. Back</strong></div>
-          <div class="venue">SOLA, 19.</div>
-          <div class="tags"><a href="https://doi.org/10.2151/sola.2023-006">DOI</a></div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">2020</div>
-        <div>
-          <strong class="title">Modeling evidence of QBO&ndash;MJO connection: a case study</strong>
-          <div class="authors"><strong>Back, S.-Y.</strong>, J.-Y. Han, and S.-W. Son*</div>
-          <div class="venue">Geophysical Research Letters, 47, e2020GL089480.</div>
-          <div class="tags"><a href="https://doi.org/10.1029/2020GL089480">DOI</a></div>
-        </div>
-      </li>
-    </ul>
-
-    <h3 class="pubgroup reveal">Peer-reviewed, in Korean</h3>
-    <ul class="pubs">
-      <li class="reveal">
-        <div class="yr">2024</div>
-        <div>
-          <strong class="title">Evaluation of short-term prediction skill of East Asian summer atmospheric rivers</strong>
-          <div class="authors">Kim, H., Y. Kwon*, <strong>S.-Y. Back</strong>, J. Hwang, S.-W. Son, H. Park, and E.-J. Cha</div>
-          <div class="venue">Atmosphere, 34, 83&ndash;95.</div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">2023</div>
-        <div>
-          <strong class="title">Comparison of atmospheric river detection algorithms in East Asia</strong>
-          <div class="authors">Kim, G., <strong>S.-Y. Back</strong>, Y. Kwon, and S.-W. Son*</div>
-          <div class="venue">Atmosphere, 33, 399&ndash;411.</div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">2022</div>
-        <div>
-          <strong class="title">Influence of UTLS ozone on the QBO&ndash;MJO connection: a case study using the GloSea5 model</strong>
-          <div class="authors">Oh, J., S.-W. Son*, and <strong>S.-Y. Back</strong></div>
-          <div class="venue">Atmosphere, 32, 223&ndash;233.</div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">2022</div>
-        <div>
-          <strong class="title">Influence of atmospheric rivers on regional precipitation in South Korea</strong>
-          <div class="authors">Kwon, Y., C. Park, <strong>S.-Y. Back*</strong>, S.-W. Son, J. Kim, and E.-J. Cha</div>
-          <div class="venue">Atmosphere, 32, 1&ndash;14.</div>
-        </div>
-      </li>
-      <li class="reveal">
-        <div class="yr">2018</div>
-        <div>
-          <strong class="title">Classification of heat wave events in Seoul using a self-organizing map</strong>
-          <div class="authors"><strong>Back, S.-Y.</strong>, S.-W. Kim, M.-I. Jung, J.-W. Roh, and S.-W. Son*</div>
-          <div class="venue">Journal of Climate Change Research, 9, 209&ndash;221.</div>
-        </div>
-      </li>
-    </ul>
   </div>
 </section>
 
@@ -491,123 +87,6 @@ footer a{color:#eef1f5;text-decoration:none;border-bottom:1px solid rgba(238,241
   </div>
 </footer>
 
-<script>
-/* ---------- hero field: zonal-mean zonal wind, contoured ----------
-   MODE 'lat-lev'  : latitude-height section. Amplitude is Gaussian in
-                     latitude (equatorial confinement); bands descend
-                     in height as time runs.
-   MODE 'time-lev' : the classic time-height section, bands sloping
-                     downward to the right.
-   KZ = vertical wavenumber, LEVELS = contour steps,
-   PHI0 = meridional half-width in degrees.                          */
-(function(){
-  var cv = document.getElementById('qbo');
-  if(!cv) return;
-  var ctx = cv.getContext('2d');
-  var W = 420, H = 240;
-  cv.width = W; cv.height = H;
-
-  var MODE   = 'lat-lev';
-  var KZ = 11, LEVELS = 5, ZC = 0.62, ZW = 0.30;
-  var LATMAX = 55, PHI0 = 13;
-  var KX = 30;
-
-  var base = [16,23,36], warm = [176,58,46], cool = [46,111,167];
-
-  var zAmp = new Float32Array(H), zPhase = new Float32Array(H);
-  for(var j=0;j<H;j++){
-    var z = (H-1-j)/H;
-    zAmp[j]   = Math.exp(-Math.pow((z-ZC)/ZW,2));
-    zPhase[j] = z*KZ;
-  }
-  var xAmp = new Float32Array(W), xPhase = new Float32Array(W);
-  for(var i=0;i<W;i++){
-    if(MODE === 'lat-lev'){
-      var lat = (i/W*2-1)*LATMAX;
-      xAmp[i] = Math.exp(-Math.pow(lat/PHI0,2));
-      xPhase[i] = 0;
-    } else {
-      xAmp[i] = 1;
-      xPhase[i] = (i/W)*KX;
-    }
-  }
-
-  var img = ctx.createImageData(W,H), d = img.data;
-  for(var p=3;p<d.length;p+=4) d[p] = 255;
-
-  function draw(t){
-    for(var j=0;j<H;j++){
-      var za = zAmp[j], zp = zPhase[j], row = j*W;
-      for(var i=0;i<W;i++){
-        var v = Math.sin(xPhase[i] + zp + t) * za * xAmp[i];
-        var q = Math.round(v*LEVELS)/LEVELS;
-        var m = Math.min(Math.abs(q),1), tgt = q>0 ? warm : cool;
-        var p = (row+i)*4;
-        d[p]   = base[0] + (tgt[0]-base[0])*m;
-        d[p+1] = base[1] + (tgt[1]-base[1])*m;
-        d[p+2] = base[2] + (tgt[2]-base[2])*m;
-      }
-    }
-    ctx.putImageData(img,0,0);
-  }
-
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ draw(0); return; }
-
-  var t = 0, last = 0;
-  (function loop(now){
-    requestAnimationFrame(loop);
-    if(now - last < 50) return;
-    last = now; t += 0.02; draw(t);
-  })(0);
-})();
-
-/* ---------- reveal on scroll ---------- */
-(function(){
-  var els = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){
-    for(var k=0;k<els.length;k++) els[k].classList.add('in');
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
-
-  Array.prototype.forEach.call(els, function(el){
-    var sibs = Array.prototype.filter.call(el.parentElement.children, function(n){
-      return n.classList.contains('reveal');
-    });
-    el.style.transitionDelay = Math.min(sibs.indexOf(el), 5) * 55 + 'ms';
-    io.observe(el);
-  });
-
-  // safety net: if anything above fails, never leave content hidden
-  setTimeout(function(){
-    Array.prototype.forEach.call(els, function(el){ el.classList.add('in'); });
-  }, 3000);
-})();
-
-/* ---------- nav: hairline on scroll + active section ---------- */
-(function(){
-  var nav = document.getElementById('nav');
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav ul a'));
-  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); })
-                     .filter(Boolean);
-
-  function onScroll(){
-    nav.classList.toggle('stuck', window.scrollY > 8);
-    var current = null;
-    targets.forEach(function(sec){
-      if(sec.getBoundingClientRect().top <= 140) current = sec.id;
-    });
-    links.forEach(function(a){
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
-</script>
+<script src="main.js"></script>
 </body>
 </html>

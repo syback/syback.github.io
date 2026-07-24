@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research &middot; Seung-Yoon Back</title>
+<meta name="description" content="Research on the Quasi-Biennial Oscillation, the Madden-Julian Oscillation, and stratosphere-troposphere coupling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Karla:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">S&mdash;Y Back</a>
+    <ul>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="page" id="research">
+  <div class="wrap">
+    <h1 class="reveal">Research</h1>
+    <p class="standfirst reveal">Tropical atmospheric dynamics, from the equatorial stratosphere to the convecting troposphere.</p>
+    <p class="lead reveal">I am a scientist exploring the dynamics of tropical atmospheric phenomena.</p>
+    <p class="reveal">The tropics are the primary energy source for Earth&rsquo;s climate system. This region hosts a wide variety of atmospheric phenomena that influence global weather and climate. Among them, planetary-scale phenomena such as the Quasi-Biennial Oscillation (QBO) and the Madden&ndash;Julian Oscillation (MJO) have far-reaching impacts on global climate. As such, both are considered potential predictability sources on subseasonal-to-seasonal timescales, making their realistic simulation essential. Although the simulation of both phenomena in climate models has improved over the past several decades, significant challenges remain. To address these challenges, I investigate the underlying mechanisms of these phenomena using theory, observations, and a hierarchy of numerical models.</p>
+
+    <figure class="schematic reveal">
+      <a href="images/research-overview.png" title="Open full size">
+        <picture>
+          <source srcset="images/research-overview.webp" type="image/webp">
+          <img src="images/research-overview.png" width="1700" height="957"
+               alt="Schematic of the QBO, the MJO, and their coupling across the tropical stratosphere and troposphere.">
+        </picture>
+      </a>
+      <figcaption>The three threads below, and how they connect.</figcaption>
+    </figure>
+
+    <div class="themes">
+      <div class="theme reveal">
+        <div class="theme-label"><span>1</span> Equatorial<br>stratosphere</div>
+        <div>
+          <h3>Quasi-Biennial Oscillation</h3>
+          <p>The QBO is the dominant mode of variability in the equatorial stratosphere, characterized by alternating easterly and westerly zonal winds with a period of approximately 28 months. In the 2015/16 winter, the QBO experienced an unexpected disruption, and this occurred again in the 2019/20 winter. While several hypotheses have been proposed based on reanalysis data, the disruption mechanism has yet to be understood from a modeling perspective.</p>
+          <p>My research aims to develop a holistic understanding of the physical mechanisms that cause disruption, using a combination of theory and a hierarchy of numerical model simulations. Based on the theory of Plumb (1977), I investigate the QBO in simulations ranging from idealized radiative-convective equilibrium models to comprehensive climate models. By bridging theory, observations, and numerical models across different complexity levels, I aim to develop a scaling theory for the factors controlling future QBO disruptions.</p>
+        </div>
+      </div>
+
+      <div class="theme reveal">
+        <div class="theme-label"><span>2</span> Equatorial<br>troposphere</div>
+        <div>
+          <h3>Madden&ndash;Julian Oscillation</h3>
+          <p>The MJO is the dominant mode of intraseasonal variability in the tropics, characterized by eastward-propagating convective anomalies with a period of 30&ndash;60 days. While the MJO has traditionally been viewed as a single phenomenon, recent studies have classified its propagation into four distinct types: standing, jumping, slow-propagating, and fast-propagating.</p>
+          <p>My research investigates this MJO diversity across multiple scales, from seasonal to long-term timescales. I aim to understand the underlying dynamics of these propagation types through moisture mode theory, which highlights the role of column-integrated moisture in the tropical troposphere. I also evaluate the ability of CMIP6 climate models to simulate MJO diversity, providing insights for improving model performance.</p>
+        </div>
+      </div>
+
+      <div class="theme reveal">
+        <div class="theme-label"><span>3</span> Stratosphere&ndash;<br>troposphere coupling</div>
+        <div>
+          <h3>The QBO&ndash;MJO connection</h3>
+          <p>Recent studies have revealed that the QBO modulates MJO activity, with enhanced MJO amplitude observed during the easterly phase of the QBO. However, the mechanism behind this connection remains poorly understood, and no climate model has successfully reproduced the relationship.</p>
+          <p>My research bridges this gap by reproducing the QBO&ndash;MJO connection in high-resolution simulations with the WRF model. By prescribing different stratospheric background states, I demonstrated that stratospheric conditions can influence MJO amplitude, and identified cloud&ndash;longwave radiation feedback as a key mechanism linking the QBO to MJO variability. This work connects my research on stratospheric and tropospheric dynamics, giving a more complete picture of tropical atmospheric interactions across vertical layers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Office</h4>
+        <p>Henry Hinds Laboratory for the Geophysical Sciences<br>
+        5734 S. Ellis Ave., Room 433<br>
+        Chicago, IL 60637</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:syback@uchicago.edu">syback@uchicago.edu</a><br>
+        <a href="https://scholar.google.com/citations?user=R025OCEAAAAJ&amp;hl=en">Google Scholar</a> ·
+        <a href="https://github.com/syback">GitHub</a> ·
+        <a href="Back_CV.pdf">CV</a></p>
+      </div>
+    </div>
+    <div class="colophon">
+      Background: idealized zonal-mean zonal wind in latitude and height, descending with time.
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
